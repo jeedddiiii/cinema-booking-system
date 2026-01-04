@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+:root {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4a4a6a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5a5a7a;
+}
+
+/* Seat styles */
+.seat {
+  @apply w-10 h-10 rounded-t-lg cursor-pointer transition-all duration-200 flex items-center justify-center text-xs font-medium;
+}
+
+.seat-available {
+  @apply bg-gradient-to-b from-emerald-500 to-emerald-700 hover:from-emerald-400 hover:to-emerald-600 hover:scale-110 shadow-lg shadow-emerald-500/30;
+}
+
+.seat-locked {
+  @apply bg-gradient-to-b from-amber-500 to-amber-700 cursor-not-allowed shadow-lg shadow-amber-500/30 animate-pulse-slow;
+}
+
+.seat-locked-by-me {
+  @apply bg-gradient-to-b from-blue-500 to-blue-700 hover:from-blue-400 hover:to-blue-600 shadow-lg shadow-blue-500/30;
+}
+
+.seat-booked {
+  @apply bg-gradient-to-b from-gray-600 to-gray-800 cursor-not-allowed opacity-60;
+}
+
+.seat-selected {
+  @apply bg-gradient-to-b from-rose-500 to-rose-700 ring-2 ring-rose-400 ring-offset-2 ring-offset-cinema-dark scale-110 shadow-xl shadow-rose-500/50;
+}
+
+/* Screen effect */
+.screen {
+  @apply bg-gradient-to-b from-slate-400 to-slate-600 rounded-md shadow-2xl;
+  box-shadow: 0 0 50px rgba(148, 163, 184, 0.3), 0 0 100px rgba(148, 163, 184, 0.2);
+}
+
+/* Glass effect */
+.glass {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-500 hover:to-rose-400 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-lg shadow-rose-500/30 hover:shadow-rose-500/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-rose-500/30;
+}
+
+.btn-secondary {
+  @apply bg-white/10 hover:bg-white/20 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 border border-white/20;
+}
